@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from "express"
 import cors from "cors"
 import {connectDB} from "./config/db.js"
@@ -21,7 +24,7 @@ app.use('/api/auth',userRouter)
 app.use('/api/project',projectRouter)
 app.use('/api/task',taskRouter)
 app.use('/api/column',columnRouter)
-
-app.listen(3000,()=>{
+const PORT=process.env.PORT
+app.listen(PORT,()=>{
     console.log("running on 3000")
 })
