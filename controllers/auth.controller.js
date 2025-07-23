@@ -53,7 +53,6 @@ const registerUser=async(req,res)=>{
             password:hashPassword
         });
         const user=await newUser.save();
-        // const token=await createToken(user._id);
         res.json({success:true,user})
     }catch(error){
         console.log(error);

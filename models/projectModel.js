@@ -13,12 +13,7 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Collaborators: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  
 });
 
 export const Project = new mongoose.model("Project", projectSchema);
